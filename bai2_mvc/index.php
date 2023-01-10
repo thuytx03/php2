@@ -7,7 +7,6 @@ switch ($url) {
         //điều hướng về trang danh sách sản phẩm
         // echo listProduct();
         echo listStaff();
-
         break;
     case 'add':
         echo addProduct();

@@ -27,7 +27,6 @@ function getData($query, $getAll = true){
     if($getAll){
         return $stmt->fetchAll();
     }
-
     return $stmt->fetch();
 }
  function resetId($table) {
