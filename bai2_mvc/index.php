@@ -29,4 +29,8 @@ switch ($url) {
     case 'updateStaff':
         echo updateStaff();
         break;
+        default:
+        # code...
+        echo 'Đường dẫn không tồn tại';
+        break;
 }
