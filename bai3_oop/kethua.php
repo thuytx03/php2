@@ -5,10 +5,13 @@ class ConNguoi{
     public $tay;
     public $mat;
     public $mui;
-    public function __construct($tay,$chan)
+    public function __construct($tay,$chan,$mat,$mui)
     {
         $this->tay=$tay;
         $this->chan=$chan;
+        $this->mui=$mui;
+        $this->mat=$mat;
+
     }
     public function an(){
         echo "Ăn bằng mồm";
@@ -23,11 +26,17 @@ class ConNguoi{
 
 
 }
+//khi class con chưa có hàm khởi tạo thì class con sẽ auto theo class cha
 class NguoiLon extends ConNguoi {
 
     public $longNach;
 
     // phương thức khởi tạo
+    public function __construct($chan,$tay,$mat,$mui,$longNach)
+    {
+        parent::__construct($chan,$tay,$mat,$mui);
+        $this->longNach=$longNach;
+    }
 
     public function di(){
     echo "Đi bằng: ".$this->chan."chân";

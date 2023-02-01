@@ -1,6 +1,6 @@
 <?php
 class HinhChuNhat{
-    public  $chieudai;
+    public $chieudai;
     public $chieurong;
 
     public function __construct($chieudai,$chieurong)
