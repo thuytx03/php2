@@ -1,14 +1,23 @@
 <?php
     namespace App\Controllers;
-    class ProductController {
-        // public static function index(){
-        //     return "Đây là trang chủ";
-        // }
+    use App\Models\Product;
+    class ProductController extends BaseController{
+        public $product;
+
+        public function __construct(){
+            $this->product = new Product();
+            
+        }
+
         public function index(){
-            echo "123";
+            $products=$this->product->getProduct();
+
+            //đổ dữ liệu sang view blade
+            return $this->render('product.index',compact('products'));
+            
         }
-        public function addProduct(){
-            echo "Thêm sản phẩm";
-        }
+        // public function addProduct(){
+        //     echo "Thêm sản phẩm";
+        // }
     }
 ?>

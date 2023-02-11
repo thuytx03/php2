@@ -1,6 +1,6 @@
 <?php
 //điều chỉnh kết nối db ở đây
-const DBNAME = "we17316";
+const DBNAME = "we17314";
 const DBUSER = "root";
 const DBPASS = "";
 const DBCHARSET = "utf8";

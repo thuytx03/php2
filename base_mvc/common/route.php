@@ -22,6 +22,7 @@ $router->get('/', function(){
 $router->get('test', [App\Controllers\ProductController::class, 'index']);
 //tạo route có link add_product gọi vào trong phương thức add của productcontroller
 $router->get('add-product', [App\Controllers\ProductController::class, 'addProduct']);
+$router->get('listCustomer', [App\Controllers\CustomerController::class, 'listCustomer']);
 
 
 # NB. You can cache the return value from $router->getData() so you don't have to create the routes each request - massive speed gains
