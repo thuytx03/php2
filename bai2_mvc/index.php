@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
 require_once  'controllers/ProductController.php';
 require_once 'controllers/StaffController.php';
 $url = isset($_GET['url']) == true ? $_GET['url'] : "/";
