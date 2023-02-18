@@ -7,7 +7,6 @@ class CustomerController extends BaseController{
         {
             $this->customer=new Customer();
         }
-
         public function listCustomer(){
             $customers=$this->customer->getCustomer();
             return $this->render('customer.index', compact('customers'));

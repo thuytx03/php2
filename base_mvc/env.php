@@ -6,3 +6,29 @@ const DBPASS = "";
 const DBCHARSET = "utf8";
 const DBHOST = "127.0.0.1";
 
+//tất cả những giừ chung của dự án viết vào đây
+const BASE_URL = "http://localhost/php2/base_mvc/";
+
+function delete_session()
+{
+    unset($_SESSION['errors']);
+    unset($_SESSION['success']);
+}
+function route($name)
+{
+    return BASE_URL . $name;
+}
+function redirect($key, $msg, $route)
+{
+    $_SESSION[$key] = $msg;
+    switch ($key) {
+        case 'success':
+            unset($_SESSION['errors']);
+            break;
+        case 'errors':
+            unset($_SESSION['success']);
+            break;
+    }
+    header('location:' . BASE_URL . $route . "?msg=" . $key);
+    die;
+}

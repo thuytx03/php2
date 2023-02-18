@@ -1,0 +1,29 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('content'); ?>
+<?php if(isset($_SESSION['errors']) && isset($_GET['msg'])): ?>
+ <ul>
+ <?php $__currentLoopData = $_SESSION['errors']; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $error): $loop = $this->incrementLoopIndices();  ?>
+ <li style="color: red"><?php echo \htmlentities($error??'', ENT_QUOTES, 'UTF-8', false); ?></li>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </ul>
+ <?php endif; ?>
+ <?php if(isset($_SESSION['success']) && isset($_GET['msg'])): ?>
+ <span style="color: green"><?php echo \htmlentities($_SESSION['success']??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ <?php endif; ?>
+
+ <h1>Sửa sản phẩm</h1>
+ <form action="<?php echo \htmlentities(BASE_URL.'updateProduct/'.$product->id??'', ENT_QUOTES, 'UTF-8', false); ?>" method="POST">
+ <div class="form-group">
+ <label for="my-input">Tên sản phẩm</label>
+ <input id="my-input" class="form-control" value="<?php echo \htmlentities($product->ten_sp??'', ENT_QUOTES, 'UTF-8', false); ?>" type="text" name="ten_sp" placeholder="Vui lòng nhập tên sản phẩm">
+ </div>
+ <div class="form-group">
+ <label for="my-input">Đơn giá</label>
+ <input id="my-input" class="form-control" type="text"value="<?php echo \htmlentities($product->gia??'', ENT_QUOTES, 'UTF-8', false); ?>"  name="gia" placeholder="Vui lòng nhập giá sản phẩm">
+ </div>
+ <input type="submit" value="Thêm sản phẩm" name="edit" class="btn btn-primary">
+ </form>
+
+<?php $this->stopSection(); ?>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('layout.main'); } ?>
