@@ -1,0 +1,20 @@
+{
+    "name": "dell/assignment2",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "thuytx03",
+            "email": "111112338+thuytx03@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "illuminate/database": "^9.51",
+        "illuminate/events": "^9.51",
+        "eftec/bladeone": "^4.8",
+        "phroute/phroute": "^2.2"
+    }
+}

@@ -1,0 +1,57 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('home-section'); ?>
+ <div class="container">
+ <h1>Quản lý Lương Nhân Viên</h1>
+ <div class="d-flex justify-content-end">
+ <a href="<?php echo \htmlentities(route('addSalary')??'', ENT_QUOTES, 'UTF-8', false); ?>" class="btn btn-success">Tính lương</a>
+ </div>
+ <?php if(isset($_SESSION['success'])): ?>
+ <div class="alert alert-success mt-2" role="alert">
+ <strong>Thành công!</strong> <?php echo \htmlentities($_SESSION['success']??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ </div>
+ <?php unset($_SESSION['success']); ?>
+ <?php endif; ?>
+ <table class="table table-striped table-inverse table-responsive text-center mt-3">
+ <thead class="thead-inverse">
+ <tr>
+ <th>ID</th>
+ <th>ID Nhân viên</th>
+ <th>Họ và tên</th>
+ <th>Lương cơ bản</th>
+ <th>Số ngày công</th>
+ <th>Thưởng</th>
+ <th>Phụ cấp</th>
+ <th>VAT</th>
+ <th>Tổng lương</th>
+ <th>Hành động</th>
+
+ </tr>
+ </thead>
+ <tbody>
+ <?php $__currentLoopData = $getAllSalarys; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $key => $value): $loop = $this->incrementLoopIndices();  ?>
+ <tr>
+ <td scope="row"><?php echo \htmlentities($value->id??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($value->staff_id??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($value->staff_name??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($value->basic_salary??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($value->work_day??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($value->bonus??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($value->allowance??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($value->vat??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($value->total_salary??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td>
+ <a href="<?php echo \htmlentities(route('deleteSalary/'.$value->id)??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ onclick="return confirm('Bạn có chắc chắn muốn xoá Lương của <?php echo \htmlentities($value->staff_name??'', ENT_QUOTES, 'UTF-8', false); ?> ? Hành động này có thể xoá toàn bộ dữ liệu về Lương của <?php echo \htmlentities($value->staff_name??'', ENT_QUOTES, 'UTF-8', false); ?> !' )"
+ class="btn btn-danger">Xoá</a>
+ <a href="<?php echo \htmlentities(route('updateSalary&id='.$value->id)??'', ENT_QUOTES, 'UTF-8', false); ?>" class="btn btn-primary">Sửa</a>
+ </td>
+ </tr>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </tbody>
+ </table>
+ </div>
+<?php $this->stopSection(); ?>
+
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('layout.main'); } ?>

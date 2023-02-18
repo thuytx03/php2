@@ -1,0 +1,15 @@
+{
+    "name": "dell/assignment",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "thuytx03",
+            "email": "111112338+thuytx03@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
