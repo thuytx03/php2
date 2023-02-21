@@ -30,7 +30,7 @@
                 <div class="form-group mt-3">
                     <button type="submit" class="btn btn-primary" name="update_position">Cập nhật</button>
                     <button type="reset" class="btn btn-danger">Nhập lại</button>
-                    <a href="listPosition" class="btn btn-success">Danh sách</a>
+                    <a href="{{route('listPosition')}}" class="btn btn-success">Danh sách</a>
                 </div>
         </form>
     </div>

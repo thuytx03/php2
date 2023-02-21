@@ -93,7 +93,7 @@
                 <div class="form-group mt-3">
                     <button type="submit" class="btn btn-primary" name="add-staff">Thêm mới</button>
                     <button type="reset" class="btn btn-danger">Nhập lại</button>
-                    <a href="listStaff" class="btn btn-success">Danh sách</a>
+                    <a href="{{route('listStaff')}}" class="btn btn-success">Danh sách</a>
                 </div>
             </div>
         </form>

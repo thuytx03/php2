@@ -14,7 +14,7 @@ class SalaryController extends BaseController
     {
         $this->salary = new SalaryModel();
         $this->staff = new StaffModel();
-       checkAuth();
+        checkAuth();
 
     }
     public function listSalary()

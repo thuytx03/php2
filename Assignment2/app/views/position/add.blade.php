@@ -27,7 +27,7 @@
             <div class="form-group mt-3">
                 <button type="submit" class="btn btn-primary" name="add_position">Thêm mới</button>
                 <button type="reset" class="btn btn-danger">Nhập lại</button>
-                <a href="?url=listPosition" class="btn btn-success">Danh sách</a>
+                <a href="{{route('listPosition')}}" class="btn btn-success">Danh sách</a>
             </div>
         </form>
     </div>

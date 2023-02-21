@@ -1,7 +1,7 @@
 @extends('layout.main')
 @section('home-section')
     <div class="container">
-        <h1 class="mt-2">Thêm chức vụ</h1>
+        <h1 class="mt-2">Thêm mới phòng ban</h1>
 
         @isset($_SESSION['errors'])
             @foreach ($_SESSION['errors'] as $error)
@@ -28,7 +28,7 @@
             <div class="form-group mt-3">
                 <button type="submit" class="btn btn-primary" name="add_department">Thêm mới</button>
                 <button type="reset" class="btn btn-danger">Nhập lại</button>
-                <a href="listDepartment" class="btn btn-success">Danh sách</a>
+                <a href="{{route('listDepartment')}}" class="btn btn-success">Danh sách</a>
             </div>
         </form>
     </div>

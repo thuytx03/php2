@@ -51,7 +51,7 @@
                 <div class="form-group mt-3">
                     <button type="submit" class="btn btn-primary" name="add_account">Thêm mới</button>
                     <button type="reset" class="btn btn-danger">Nhập lại</button>
-                    <a href="listAccount" class="btn btn-success">Danh sách</a>
+                    <a href="{{route('listAccount')}}" class="btn btn-success">Danh sách</a>
                 </div>
             </div>
         </form>
