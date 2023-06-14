@@ -28,7 +28,6 @@ class AuthController extends BaseController{
     public function logOut(){
         unset($_SESSION['auth']);
         return $this->render('auth.login');
-
     }
 }
 
